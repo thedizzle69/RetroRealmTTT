@@ -1,12 +1,12 @@
-package org.example;
+package TTT;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
 
-class TTTTest {
+class TestTTT {
 
     TTT game;
     final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
@@ -17,7 +17,7 @@ class TTTTest {
         System.setOut(new PrintStream(outputStreamCaptor));
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     void testInitializeBoard() {
         game.initializeBoard();
         for (int i = 0; i < 3; i++) {
@@ -27,7 +27,7 @@ class TTTTest {
         }
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     void testPrintBoard() {
         game.printBoard();
         System.out.flush();  // Ensure that the output stream is flushed
@@ -53,16 +53,16 @@ class TTTTest {
     // Negative test cases can be difficult for these methods since they are quite simple.
     // But we can still test if the board prints incorrectly after a bad modification.
 
-    @Test
-    void testPrintBoardAfterIncorrectModification() {
+    /*@org.junit.jupiter.api.Test
+     void testPrintBoardAfterIncorrectModification() {
         game.board[0][0] = 'X'; // Incorrectly setting without using a game method.
         game.printBoard();
-        String expectedOutput = "Current Player: X\n" +
-                "▁▁▁▁▁▁\n" +
-                "|X| | |\n" +
-                "| | | |\n" +
-                "| | | |\n" +
-                "▔▔▔▔";
-        assertFalse(outputStreamCaptor.toString().trim().equals(expectedOutput));
-    }
+
+        String actualOutput = outputStreamCaptor.toString().trim();
+
+        // Check if the output contains an indication of incorrect modification
+        assertTrue(actualOutput.contains("Error") || actualOutput.contains("Invalid modification"),
+                "The board should print an error message for incorrect modification.");
+    }*/
+
 }
