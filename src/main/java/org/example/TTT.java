@@ -33,5 +33,15 @@ public class TTT {
             }
             System.out.println("▔▔▔▔");
         }
+
+    boolean makeMove(int row, int col) {
+        if (row < 0 || row >= 3 || col < 0 || col >= 3 || board[row][col] != ' ') {
+            return false;
+        }
+
+        board[row][col] = currentPlayer;
+        return true;
+    }
+
     }
 
