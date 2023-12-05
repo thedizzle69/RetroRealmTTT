@@ -14,7 +14,21 @@ public class Main {
             int row = scanner.nextInt();
             System.out.print("column (0-2): ");
             int col = scanner.nextInt();
+
+            if (game.makeMove(row, col)) {
+                if (game.checkWin()) {
+                    game.printBoard();
+                    System.out.println("Player " + game.currentPlayer + " wins!");
+                    break;
+                } else {
+                    game.currentPlayer = (game.currentPlayer == 'X') ? 'O' : 'X';
+                }
+            } else {
+                System.out.println("Invalid move. Try again.");
+            }
+        }
+        scanner.close();
         }
     }
-}
+
 
