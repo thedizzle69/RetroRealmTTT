@@ -1,2 +1,2 @@
 # RetroRealmTTT
-Java Project - Omerivic, Kaiser, Singh
+Java Project - Omerovic, Kaiser, Singh
