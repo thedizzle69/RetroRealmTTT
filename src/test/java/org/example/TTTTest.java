@@ -65,4 +65,35 @@ class TTTTest {
                 "▔▔▔▔";
         assertFalse(outputStreamCaptor.toString().trim().equals(expectedOutput));
     }
+
+    @Test
+    public void testCheckWinHorizontal() {
+        game.makeMove(0, 0); // X
+        game.makeMove(1, 0); // O
+        game.makeMove(0, 1); // X
+        game.makeMove(1, 1); // O
+        game.makeMove(0, 2); // X
+        assertTrue(game.checkWin()); // X wins horizontally
+    }
+
+    @Test
+    public void testCheckWinVertical() {
+        game.makeMove(0, 0); // X
+        game.makeMove(0, 1); // O
+        game.makeMove(1, 0); // X
+        game.makeMove(1, 1); // O
+        game.makeMove(2, 0); // X
+        assertTrue(game.checkWin()); // X wins vertically
+    }
+
+    @Test
+    public void testCheckWinDiagonal() {
+        game.makeMove(0, 0); // X
+        game.makeMove(0, 1); // O
+        game.makeMove(1, 1); // X
+        game.makeMove(0, 2); // O
+        game.makeMove(2, 2); // X
+        assertTrue(game.checkWin()); // X wins diagonally
+    }
+
 }
