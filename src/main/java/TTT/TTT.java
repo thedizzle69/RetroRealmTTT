@@ -1,6 +1,6 @@
-package org.example;
+package TTT;
 
-import java.util.Scanner;
+/* import java.util.Scanner; */
 
 public class TTT {
         char[][] board;
