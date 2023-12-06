@@ -31,6 +31,10 @@ public class Main {
                     game.printBoard();
                     System.out.println("Player " + game.currentPlayer + " wins!");
                     break;
+                } else if (game.isBoardFull()) {
+                    game.printBoard();
+                    System.out.println("It's a tie! The board is full.");
+                    break;
                 } else {
                     game.currentPlayer = (game.currentPlayer == 'X') ? 'O' : 'X';
                 }
