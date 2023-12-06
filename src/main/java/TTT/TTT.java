@@ -1,6 +1,6 @@
 package TTT;
 
-import java.util.Scanner;
+/* import java.util.Scanner; */
 
 public class TTT {
     char[][] board;
@@ -57,5 +57,23 @@ public class TTT {
         if (board[0][2] == currentPlayer && board[1][1] == currentPlayer && board[2][0] == currentPlayer) {
             return true; // Diagonal win
         }
-        return false;}
+
+        else {
+            return false;
+        }
+    }
+
+    boolean isBoardFull() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == ' ') {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+
 }
