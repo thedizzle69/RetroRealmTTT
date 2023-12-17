@@ -13,9 +13,9 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <dependencies>
         <!-- Your dependencies here -->
-
         <!-- Example dependencies for JUnit 4 and JUnit Jupiter -->
         <dependency>
             <groupId>junit</groupId>
@@ -46,12 +46,13 @@
             </plugin>
 
             <!-- Checkstyle plugin configuration -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>latest-version</version>
+            <!-- <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-checkstyle-plugin</artifactId>
+               // Use the specific version you want to use, e.g., 3.1.1
+                <version>3.1.1</version>
                 <configuration>
-                    <!-- Point to your Checkstyle configuration file -->
+                    // Point to your Checkstyle configuration file
                     <configLocation>checkstyle.xml</configLocation>
                 </configuration>
                 <executions>
@@ -63,7 +64,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin> -->
         </plugins>
     </build>
 </project>
