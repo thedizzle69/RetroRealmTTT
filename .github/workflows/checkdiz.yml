@@ -1,4 +1,4 @@
-name: Checkdiz
+name: Checkstyle
 
 on:
   push:
