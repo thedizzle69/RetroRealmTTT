@@ -14,6 +14,19 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <!-- add checkstyle dependency management
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.1</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement> -->
+
+
     <dependencies>
         <!-- Your dependencies here -->
         <!-- Example dependencies for JUnit 4 and JUnit Jupiter -->
@@ -29,7 +42,33 @@
             <version>5.9.2</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Add Checkstyle dependency
+
+        <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <version>3.1.1</version>
+        </dependency> -->
+
+
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Add Checkstyle plugin version -->
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.1</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
@@ -46,13 +85,12 @@
             </plugin>
 
             <!-- Checkstyle plugin configuration -->
-            <!-- <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-checkstyle-plugin</artifactId>
-               // Use the specific version you want to use, e.g., 3.1.1
-                <version>3.1.1</version>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <!-- Maven will automatically use the version specified in dependencyManagement -->
                 <configuration>
-                    // Point to your Checkstyle configuration file
+                    <!-- Point to your Checkstyle configuration file -->
                     <configLocation>checkstyle.xml</configLocation>
                 </configuration>
                 <executions>
@@ -64,7 +102,8 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin> -->
+            </plugin>
         </plugins>
     </build>
+
 </project>
