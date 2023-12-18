@@ -91,7 +91,7 @@
                 <!-- Maven will automatically use the version specified in dependencyManagement -->
                 <configuration>
                     <!-- Point to your Checkstyle configuration file -->
-                    <configLocation>checkstyle.xml</configLocation>
+                    <configLocation>checkdiz.xml</configLocation>
                 </configuration>
                 <executions>
                     <execution>
