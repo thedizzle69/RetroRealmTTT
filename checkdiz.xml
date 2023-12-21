@@ -1,4 +1,4 @@
-<module name="Checker">
+<module name="Checkstyle">
     <property name="fileExtensions" value="java"/>
     <!-- Check for appropriate line  length -->
     <module name="LineLength">
