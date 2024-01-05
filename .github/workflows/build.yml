@@ -1,0 +1,78 @@
+name: Build and Release JARs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_terminal:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+
+      - name: Build Terminal JAR
+        run: |
+          cd src/main/java/TTT
+          javac -d ../../../target/TicTacToeTerminal -cp . Main.java
+          echo "Main-Class: TTT.Main" > ../../../target/manifest.txt
+          jar cfm ../../../target/TicTacToeTerminal.jar ../../../target/manifest.txt -C ../../../target/TicTacToeTerminal .
+
+      - name: Upload Terminal JAR
+        uses: actions/upload-artifact@v2
+        with:
+          name: Terminal-Release
+          path: target/TicTacToeTerminal.jar
+
+  build_gui:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+
+      - name: Build GUI JAR
+        run: |
+          cd src/main/java/TTTSwing
+          javac -d ../../../target/TicTacToeGUI -cp . SwingMain.java
+          echo "Main-Class: TTTSwing.SwingMain" > ../../../target/manifest.txt
+          jar cfm ../../../target/TicTacToeGUI.jar ../../../target/manifest.txt -C ../../../target/TicTacToeGUI .
+
+      - name: Upload GUI JAR
+        uses: actions/upload-artifact@v2
+        with:
+          name: GUI-Release
+          path: target/TicTacToeGUI.jar
+
+  release:
+    runs-on: ubuntu-latest
+
+    needs:
+      - build_terminal
+      - build_gui
+
+    steps:
+      - name: Download Terminal JAR
+        uses: actions/download-artifact@v2
+        with:
+          name: Terminal-Release
+          path: target
+
+      - name: Download GUI JAR
+        uses: actions/download-artifact@v2
+        with:
+          name: GUI-Release
+          path: target
+
