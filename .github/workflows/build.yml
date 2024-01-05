@@ -1,7 +1,6 @@
 name: Build and Release JARs
 
 on:
-
   pull_request:
     branches:
       - main
@@ -21,19 +20,18 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-
       - name: Build Terminal JAR
         run: |
-          cd src/main/java/TTT
-          javac -d ../../../target/TicTacToeTerminal -cp . TTT.java Main.java
-          echo "Main-Class: TTT.Main" > ../../../target/manifest.txt
-          jar cfm ../../../target/TicTacToeTerminal.jar ../../../target/manifest.txt -C ../../../target/TicTacToeTerminal .
+          mkdir -p jar/TicTacToeTerminal
+          javac -d jar/TicTacToeTerminal -cp . src/main/java/TTT/TTT.java src/main/java/TTT/Main.java
+          echo "Main-Class: TTT.Main" > jar/TicTacToeTerminal/manifest.txt
+          jar cfm jar/TicTacToeTerminal/TicTacToeTerminal.jar jar/TicTacToeTerminal/manifest.txt -C jar/TicTacToeTerminal .
 
       - name: Upload Terminal JAR
         uses: actions/upload-artifact@v2
         with:
           name: Terminal-Release
-          path: target/TicTacToeTerminal.jar
+          path: jar/TicTacToeTerminal/TicTacToeTerminal.jar
 
   build_gui:
     runs-on: ubuntu-latest
@@ -51,16 +49,16 @@ jobs:
 
       - name: Build GUI JAR
         run: |
-          cd src/main/java/TTTSwing
-          javac -d ../../../target/TicTacToeGUI -cp . TTTSwing.java SwingMain.java
-          echo "Main-Class: TTTSwing.SwingMain" > ../../../target/manifest.txt
-          jar cfm ../../../target/TicTacToeGUI.jar ../../../target/manifest.txt -C ../../../target/TicTacToeGUI .
+          mkdir -p jar/TicTacToeGUI
+          javac -d jar/TicTacToeGUI -cp . src/main/java/TTTSwing/TTTSwing.java src/main/java/TTTSwing/SwingMain.java
+          echo "Main-Class: TTTSwing.SwingMain" > jar/TicTacToeGUI/manifest.txt
+          jar cfm jar/TicTacToeGUI/TicTacToeGUI.jar jar/TicTacToeGUI/manifest.txt -C jar/TicTacToeGUI .
 
       - name: Upload GUI JAR
         uses: actions/upload-artifact@v2
         with:
           name: GUI-Release
-          path: target/TicTacToeGUI.jar
+          path: jar/TicTacToeGUI/TicTacToeGUI.jar
 
   release:
     runs-on: ubuntu-latest
@@ -74,12 +72,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: Terminal-Release
-          path: target
+          path: jar/TicTacToeTerminal
 
       - name: Download GUI JAR
         uses: actions/download-artifact@v2
         with:
           name: GUI-Release
-          path: target
-
-
+          path: jar/TicTacToeGUI
