@@ -27,6 +27,9 @@ jobs:
           echo "Main-Class: TTT.Main" > jar/TicTacToeTerminal/manifest.txt
           jar cfm jar/TicTacToeTerminal/TicTacToeTerminal.jar jar/TicTacToeTerminal/manifest.txt -C jar/TicTacToeTerminal .
 
+      - name: List Terminal JAR contents
+        run: ls -R jar/TicTacToeTerminal
+
       - name: Upload Terminal JAR
         uses: actions/upload-artifact@v2
         with:
@@ -53,6 +56,9 @@ jobs:
           javac -d jar/TicTacToeGUI -cp . src/main/java/TTTSwing/TTTSwing.java src/main/java/TTTSwing/SwingMain.java
           echo "Main-Class: TTTSwing.SwingMain" > jar/TicTacToeGUI/manifest.txt
           jar cfm jar/TicTacToeGUI/TicTacToeGUI.jar jar/TicTacToeGUI/manifest.txt -C jar/TicTacToeGUI .
+
+      - name: List GUI JAR contents
+        run: ls -R jar/TicTacToeGUI
 
       - name: Upload GUI JAR
         uses: actions/upload-artifact@v2
