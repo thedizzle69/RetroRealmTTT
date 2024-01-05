@@ -25,7 +25,7 @@ jobs:
       - name: Build Terminal JAR
         run: |
           cd src/main/java/TTT
-          javac -d ../../../target/TicTacToeTerminal -cp . Main.java
+          javac -d ../../../target/TicTacToeTerminal -cp . TTT.java Main.java
           echo "Main-Class: TTT.Main" > ../../../target/manifest.txt
           jar cfm ../../../target/TicTacToeTerminal.jar ../../../target/manifest.txt -C ../../../target/TicTacToeTerminal .
 
@@ -52,7 +52,7 @@ jobs:
       - name: Build GUI JAR
         run: |
           cd src/main/java/TTTSwing
-          javac -d ../../../target/TicTacToeGUI -cp . SwingMain.java
+          javac -d ../../../target/TicTacToeGUI -cp . TTTSwing.java SwingMain.java
           echo "Main-Class: TTTSwing.SwingMain" > ../../../target/manifest.txt
           jar cfm ../../../target/TicTacToeGUI.jar ../../../target/manifest.txt -C ../../../target/TicTacToeGUI .
 
