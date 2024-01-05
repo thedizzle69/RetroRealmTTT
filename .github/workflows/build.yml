@@ -27,13 +27,13 @@ jobs:
           cd src/main/java/TTT
           javac -d ../../../target/TicTacToeTerminal -cp . TTT.java Main.java
           echo "Main-Class: TTT.Main" > ../../../target/manifest.txt
-          jar cfm ../../../target/TicTacToeTerminal.jar ../../../target/manifest.txt -C ../../../target/TicTacToeTerminal .
+          jar cfm jar/TicTacToeTerminal/TicTacToeTerminal.jar jar/TicTacToeTerminal/manifest.txt -C jar/TicTacToeTerminal .
 
       - name: Upload Terminal JAR
         uses: actions/upload-artifact@v2
         with:
           name: Terminal-Release
-          path: target/TicTacToeTerminal.jar
+          path: jar/TicTacToeTerminal/TicTacToeTerminal.jar
 
   build_gui:
     runs-on: ubuntu-latest
@@ -54,13 +54,13 @@ jobs:
           cd src/main/java/TTTSwing
           javac -d ../../../target/TicTacToeGUI -cp . TTTSwing.java SwingMain.java
           echo "Main-Class: TTTSwing.SwingMain" > ../../../target/manifest.txt
-          jar cfm ../../../target/TicTacToeGUI.jar ../../../target/manifest.txt -C ../../../target/TicTacToeGUI .
+          jar cfm jar/TicTacToeGUI/TicTacToeGUI.jar jar/TicTacToeGUI/manifest.txt -C jar/TicTacToeGUI .
 
       - name: Upload GUI JAR
         uses: actions/upload-artifact@v2
         with:
           name: GUI-Release
-          path: target/TicTacToeGUI.jar
+          path: jar/TicTacToeGUI/TicTacToeGUI.jar
 
   release:
     runs-on: ubuntu-latest
