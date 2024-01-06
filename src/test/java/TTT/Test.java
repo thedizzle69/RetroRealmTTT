@@ -49,6 +49,60 @@ class TestTTT {
         assertEquals(expectedOutput, actualOutput, "The printed board does not match the expected output.");
     }
 
+    @org.junit.jupiter.api.Test
+    void testMakeMove() {
+        assertTrue(game.makeMove(0, 0), "Should successfully make a move");
+        assertEquals('X', game.board[0][0], "The cell should be marked with X");
+
+        assertFalse(game.makeMove(0, 0), "Should not allow marking an already marked cell");
+        assertFalse(game.makeMove(3, 3), "Should not allow marking outside the board");
+    }
+
+    @org.junit.jupiter.api.Test
+    void testCheckWin() {
+        // Test for a row win
+        game.board[0][0] = 'X';
+        game.board[0][1] = 'X';
+        game.board[0][2] = 'X';
+        assertTrue(game.checkWin(), "X should win with 1st row");
+
+        game.initializeBoard(); // Reset board
+
+        // Test for a column win
+        game.board[0][0] = 'O';
+        game.board[1][0] = 'O';
+        game.board[2][0] = 'O';
+        assertTrue(game.checkWin(), "O should win with 1st column");
+
+        game.initializeBoard(); // Reset board
+
+        // Test for diagonal win
+        game.board[0][0] = 'X';
+        game.board[1][1] = 'X';
+        game.board[2][2] = 'X';
+        assertTrue(game.checkWin(), "X should win with a diagonal");
+
+        // Test for no win
+        game.initializeBoard();
+        assertFalse(game.checkWin(), "Should be no winner");
+    }
+
+    @org.junit.jupiter.api.Test
+    void testIsBoardFull() {
+        // Test for not full board
+        game.initializeBoard();
+        assertFalse(game.isBoardFull(), "Board should not be full initially");
+
+        // Fill the board
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                game.board[i][j] = 'X'; // or 'O'
+            }
+        }
+
+        assertTrue(game.isBoardFull(), "Board should be full");
+    }
+
 
     // Negative test cases can be difficult for these methods since they are quite simple.
     // But we can still test if the board prints incorrectly after a bad modification.
