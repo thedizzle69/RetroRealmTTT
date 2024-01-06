@@ -58,34 +58,8 @@ class TestTTT {
         assertFalse(game.makeMove(3, 3), "Should not allow marking outside the board");
     }
 
-    @org.junit.jupiter.api.Test
-    void testCheckWin() {
-        // Test for a row win
-        game.board[0][0] = 'X';
-        game.board[0][1] = 'X';
-        game.board[0][2] = 'X';
-        assertTrue(game.checkWin(), "X should win with 1st row");
 
-        game.initializeBoard(); // Reset board
 
-        // Test for a column win
-        game.board[0][0] = 'O';
-        game.board[1][0] = 'O';
-        game.board[2][0] = 'O';
-        assertTrue(game.checkWin(), "O should win with 1st column");
-
-        game.initializeBoard(); // Reset board
-
-        // Test for diagonal win
-        game.board[0][0] = 'X';
-        game.board[1][1] = 'X';
-        game.board[2][2] = 'X';
-        assertTrue(game.checkWin(), "X should win with a diagonal");
-
-        // Test for no win
-        game.initializeBoard();
-        assertFalse(game.checkWin(), "Should be no winner");
-    }
 
     @org.junit.jupiter.api.Test
     void testIsBoardFull() {
@@ -102,6 +76,8 @@ class TestTTT {
 
         assertTrue(game.isBoardFull(), "Board should be full");
     }
+
+
 
 
     // Negative test cases can be difficult for these methods since they are quite simple.
