@@ -1,6 +1,7 @@
 package TTT;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -77,7 +78,69 @@ class TestTTT {
         assertTrue(game.isBoardFull(), "Board should be full");
     }
 
+    @Test
+    void testRowWin() {
+        for (char player : new char[]{'X', 'O'}) {
+            for (int row = 0; row < 3; row++) {
+                game.currentPlayer = player;
+                game.initializeBoard();
+                for (int col = 0; col < 3; col++) {
+                    game.board[row][col] = player;
+                }
+                assertTrue(game.checkWin(), "Player " + player + " should win with row " + row);
+            }
+        }
+    }
 
+    @Test
+    void testColumnWin() {
+        for (char player : new char[]{'X', 'O'}) {
+            for (int col = 0; col < 3; col++) {
+                game.currentPlayer = player;
+                game.initializeBoard();
+                for (int row = 0; row < 3; row++) {
+                    game.board[row][col] = player;
+                }
+                assertTrue(game.checkWin(), "Player " + player + " should win with column " + col);
+            }
+        }
+    }
+
+    @Test
+    void testDiagonalWin() {
+        for (char player : new char[]{'X', 'O'}) {
+            game.currentPlayer = player;
+            game.initializeBoard();
+
+            // Check first diagonal
+            for (int i = 0; i < 3; i++) {
+                game.board[i][i] = player;
+            }
+            assertTrue(game.checkWin(), "Player " + player + " should win with first diagonal");
+
+            // Check second diagonal
+            game.initializeBoard();
+            for (int i = 0; i < 3; i++) {
+                game.board[i][2 - i] = player;
+            }
+            assertTrue(game.checkWin(), "Player " + player + " should win with second diagonal");
+        }
+    }
+
+    @Test
+    void testNoWin() {
+        game.currentPlayer = 'X';
+        game.initializeBoard();
+
+        // Set up a board with no win
+        game.board[0][0] = 'X';
+        game.board[1][1] = 'X';
+        game.board[0][1] = 'O';
+        game.board[1][0] = 'O';
+
+        assertFalse(game.checkWin(), "There should be no win");
+    }
+}
 
 
     // Negative test cases can be difficult for these methods since they are quite simple.
@@ -95,4 +158,4 @@ class TestTTT {
                 "The board should print an error message for incorrect modification.");
     }*/
 
-}
+
