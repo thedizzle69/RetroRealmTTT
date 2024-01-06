@@ -30,12 +30,6 @@ jobs:
       - name: List Terminal JAR contents
         run: ls -R jar/TicTacToeTerminal
 
-      - name: Upload Terminal JAR
-        uses: actions/upload-artifact@v3
-        with:
-          name: Terminal-Release
-          path: jar/TicTacToeTerminal/TicTacToeTerminal.jar
-
       - name: Create Terminal Start Script
         run: |
           echo "#!/bin/bash" > jar/TicTacToeTerminal/start_terminal.sh
@@ -43,6 +37,11 @@ jobs:
           echo "sudo java -jar TicTacToeTerminal.jar" >> jar/TicTacToeTerminal/start_terminal.sh
           chmod +x jar/TicTacToeTerminal/start_terminal.sh
 
+      - name: Upload Terminal Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Terminal-Release
+          path: jar/TicTacToeTerminal
 
   build_gui:
     runs-on: ubuntu-latest
@@ -65,16 +64,8 @@ jobs:
           echo "Main-Class: TTTSwing.SwingMain" > jar/TicTacToeGUI/manifest.txt
           jar cfm jar/TicTacToeGUI/TicTacToeGUI.jar jar/TicTacToeGUI/manifest.txt -C jar/TicTacToeGUI .
 
-          
-
       - name: List GUI JAR contents
         run: ls -R jar/TicTacToeGUI
-
-      - name: Upload GUI JAR
-        uses: actions/upload-artifact@v2
-        with:
-          name: GUI-Release
-          path: jar/TicTacToeGUI/TicTacToeGUI.jar
 
       - name: Create GUI Start Script
         run: |
@@ -82,6 +73,12 @@ jobs:
           echo "cd \"\$(dirname \"\$0\")\"" >> jar/TicTacToeGUI/start_gui.sh
           echo "sudo java -jar TicTacToeGUI.jar" >> jar/TicTacToeGUI/start_gui.sh
           chmod +x jar/TicTacToeGUI/start_gui.sh
+
+      - name: Upload GUI JAR
+        uses: actions/upload-artifact@v2
+        with:
+          name: GUI-Release
+          path: jar/TicTacToeGUI
 
   release:
     runs-on: ubuntu-latest
@@ -91,13 +88,13 @@ jobs:
       - build_gui
 
     steps:
-      - name: Download Terminal JAR
+      - name: Download Terminal JAR and Start Script
         uses: actions/download-artifact@v2
         with:
           name: Terminal-Release
           path: jar/TicTacToeTerminal
 
-      - name: Download GUI JAR
+      - name: Download GUI JAR and Start Script
         uses: actions/download-artifact@v2
         with:
           name: GUI-Release
