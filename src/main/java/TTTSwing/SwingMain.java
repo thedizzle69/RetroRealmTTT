@@ -5,6 +5,7 @@ import java.awt.*;
 // import java.awt.event.ActionEvent;
 // import java.awt.event.ActionListener;
 
+
 public class SwingMain {
 
     private JFrame frame;
@@ -22,7 +23,7 @@ public class SwingMain {
 
     private void initialize() {
         frame = new JFrame();
-        frame.setBounds(100, 100, 450, 300);
+        frame.setBounds(100, 100, 300, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(new GridLayout(3, 3));
 
