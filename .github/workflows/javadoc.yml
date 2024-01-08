@@ -31,4 +31,4 @@ jobs:
         with:
           publish_dir: docs
           github_token: ${{ secrets.DOC_TOKEN }}
-          branch: main
+          publish_branch: main
