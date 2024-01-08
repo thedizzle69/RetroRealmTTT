@@ -54,13 +54,23 @@ public class TTT {
      * @return {@code true} True if the move was successful, false otherwise.
      */
     boolean makeMove(int row, int col) {
+        // Your existing implementation
+
+        // Adding Javadoc comments for boolean variable
+        /**
+         * Represents whether the move was successful or not.
+         */
+        boolean moveSuccessful = false;
+
         if (row < 0 || row >= 3 || col < 0 || col >= 3 || board[row][col] != ' ') {
-            return false;
+            return moveSuccessful;
         }
 
         board[row][col] = currentPlayer;
-        return true;
+        moveSuccessful = true;
+        return moveSuccessful;
     }
+
 
     /**
      * Checks if the current player has won the game.
