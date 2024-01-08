@@ -89,7 +89,7 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.6.3</version>
                 <configuration>
-                    <show>protected</show>
+                    <show>package</show>
                     <reportOutputDirectory>${project.basedir}/docs</reportOutputDirectory>
                 </configuration>
                 <executions>
