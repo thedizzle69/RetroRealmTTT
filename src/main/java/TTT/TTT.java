@@ -51,7 +51,7 @@ public class TTT {
      *
      * @param row The row index (0-2).
      * @param col The column index (0-2).
-     * @return True if the move was successful, false otherwise.
+     * @return {@code true} True if the move was successful, false otherwise.
      */
     boolean makeMove(int row, int col) {
         if (row < 0 || row >= 3 || col < 0 || col >= 3 || board[row][col] != ' ') {
