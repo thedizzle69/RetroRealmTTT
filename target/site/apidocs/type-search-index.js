@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"TTT","l":"Main"},{"p":"TTTSwing","l":"SwingMain"},{"p":"TTT","l":"TTT"},{"p":"TTTSwing","l":"TTTSwing"}];updateSearchResults();
