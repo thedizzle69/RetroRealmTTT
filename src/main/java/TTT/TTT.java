@@ -53,7 +53,7 @@ public class TTT {
      * @param col The column index (0-2).
      * @return {@code true} True if the move was successful, false otherwise.
      */
-    boolean makeMove(int row, int col) {
+    public boolean makeMove(int row, int col) {
         // Your existing implementation
 
         // Adding Javadoc comments for boolean variable
