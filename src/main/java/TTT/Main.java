@@ -2,8 +2,16 @@ package TTT;
 
 import java.util.Scanner;
 
-
+/**
+ * The main class for the Tic-Tac-Toe terminal application.
+ */
 public class Main {
+    /**
+     * The main method where the game is initialized and played in the console.
+     *
+     * @param args Command-line arguments (not used).
+     */
+
     public static void main(String[] args) {
         TTT game = new TTT();
         Scanner scanner = new Scanner(System.in);
