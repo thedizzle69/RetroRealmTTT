@@ -53,22 +53,13 @@ public class TTT {
      * @param col The column index (0-2).
      * @return {@code true} True if the move was successful, false otherwise.
      */
-    public boolean makeMove(int row, int col) {
-        // Your existing implementation
-
-        // Adding Javadoc comments for boolean variable
-        /**
-         * Represents whether the move was successful or not.
-         */
-        boolean moveSuccessful = false;
-
+    boolean makeMove(int row, int col) {
         if (row < 0 || row >= 3 || col < 0 || col >= 3 || board[row][col] != ' ') {
-            return moveSuccessful;
+            return false;
         }
 
         board[row][col] = currentPlayer;
-        moveSuccessful = true;
-        return moveSuccessful;
+        return true;
     }
 
 
