@@ -1,0 +1,32 @@
+name: Generate and Deploy Javadoc
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  generate_javadoc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Generate Javadoc
+        run: mvn package
+
+      - name: Move Javadoc to Directory
+        run: mv target/javadoc docs
+
+      - name: Upload Javadoc to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: docs

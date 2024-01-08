@@ -2,6 +2,9 @@ package TTTSwing;
 
 /* import java.util.Scanner; */
 
+/**
+ * Represents the Tic-Tac-Toe game logic for the Swing GUI application.
+ */
 public class TTTSwing {
     char[][] board;
     char currentPlayer;
@@ -83,11 +86,22 @@ public class TTTSwing {
     }
 
     //everything from here on is new and just made for swing
+
+    /**
+     * Gets the current state of the game board.
+     *
+     * @return The 2D array representing the game board.
+     */
     public char[][] getBoard() {
         return board;
     }
 
 
+    /**
+     * Gets the current player ('X' or 'O').
+     *
+     * @return The current player.
+     */
     public char getCurrentPlayer() {
         return currentPlayer;
     }
