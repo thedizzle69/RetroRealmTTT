@@ -21,7 +21,7 @@ jobs:
           cache: 'maven'
 
       - name: Generate Javadoc
-        run: mvn javadoc:javadoc
+        run: mvn javadoc:jar
 
       - name: Move Javadoc to Directory
         run: mv target/apidocs/* docs/

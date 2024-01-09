@@ -63,6 +63,7 @@ jobs:
           javac -d jar/TicTacToeGUI -cp . src/main/java/TTTSwing/TTTSwing.java src/main/java/TTTSwing/SwingMain.java
           echo "Main-Class: TTTSwing.SwingMain" > jar/TicTacToeGUI/manifest.txt
           jar cfm jar/TicTacToeGUI/TicTacToeGUI.jar jar/TicTacToeGUI/manifest.txt -C jar/TicTacToeGUI .
+          
 
       - name: List GUI JAR contents
         run: ls -R jar/TicTacToeGUI
@@ -99,3 +100,5 @@ jobs:
         with:
           name: GUI-Release
           path: jar/TicTacToeGUI
+
+

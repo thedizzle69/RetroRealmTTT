@@ -3,7 +3,7 @@ package TTT;
 /* import java.util.Scanner; */
 
 /**
- * Represents the Tic-Tac-Toe game logic for the terminal application. TEST!
+ * Represents the Tic-Tac-Toe game logic for the terminal application.
  */
 public class TTT {
     char[][] board;
@@ -91,7 +91,7 @@ public class TTT {
     }
 
     /**
-     * Checks if the game board is full.
+     * Checks if the game board is full
      *
      * @return True if the board is full, false otherwise.
      */
