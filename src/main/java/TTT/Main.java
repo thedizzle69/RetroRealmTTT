@@ -34,7 +34,7 @@ public class Main {
                 // Your logic for handling user input here
 
             } catch (java.util.InputMismatchException e) {
-                System.out.println("Invalid input. Please enter a valid integer.");
+                System.out.println("Invalid input! Please enter a valid integer.");
                 scanner.nextLine(); // Consume the invalid input to avoid an infinite loop
             }
 
