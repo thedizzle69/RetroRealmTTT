@@ -19,7 +19,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: 'maven'
-          github_token: ${{ secrets.DOC_TOKEN }}
 
       - name: Build Terminal JAR
         run: |
@@ -38,18 +37,6 @@ jobs:
           echo "sudo java -jar TicTacToeTerminal.jar" >> jar/TicTacToeTerminal/start_terminal.sh
           chmod +x jar/TicTacToeTerminal/start_terminal.sh
 
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.email jai.singh29192@gmail.com
-          git config --global user.name thedizzle69
-          git add jar/TicTacToeTerminal/
-          echo "GitActor is $GITHUB_ACTOR"
-          echo "GitToken is ${{ secrets.DOC_TOKEN }}"
-          git commit -m "Created Terminal jar"
-          git push https://github.com/thedizzle69/RetroRealmTTT HEAD:main
-
-
-
       - name: Upload Terminal Artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -61,6 +48,7 @@ jobs:
         with:
           name: Terminal-Release
           path: jar/TicTacToeTerminal
+
 
   build_gui:
     runs-on: ubuntu-latest
@@ -96,8 +84,7 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          git config --global user.email jai.singh29192@gmail.com
-          git config --global user.name thedizzle69
+
           git add jar/TicTacToeGUI/
           git commit -m "Created GUI jar"
           echo "GitActor is $GITHUB_ACTOR"
@@ -125,13 +112,13 @@ jobs:
 
     steps:
       - name: Download Terminal JAR and Start Script
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: Terminal-Release
           path: jar/TicTacToeTerminal
 
       - name: Download GUI JAR and Start Script
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: GUI-Release
           path: jar/TicTacToeGUI
