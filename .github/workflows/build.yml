@@ -96,6 +96,7 @@ jobs:
           git config --global user.name thedizzle69
           git add jar/TicTacToeGUI/
           git commit -m "Created GUI jar"
+          echo "Github Actor: ${{ github.actor }}"
           git push origin HEAD:main
 
       - name: Upload GUI JAR
