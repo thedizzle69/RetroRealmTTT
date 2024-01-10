@@ -22,19 +22,19 @@ The project also runs fine on Java 21, tho. (I just wanted to flex that I have J
 
 If you need any assistance, please refer to the "How_to_install_Java.md" file in the root directory of the project. (this is just a reminder for myself, in case I HAVE THE WRONG JAVA VERSION INSTALLED)
 
+## How to run the GUI application
+
+1. Open the terminal and navigate to the folder containing the jar file. `cd jar/TicTacToeGUI`
+2. Run the shell script using the following command: `./start_gui.sh`
+   2b. Run the following command: `java -jar TicTacToeGUI.jar`
+3. Play the game. As there is no AI implemented the only challenge is to play with yourself (like I do every night).
+
 ## How to run the terminal application
 
 1. Open the terminal and navigate to the folder containing the jar file. `cd jar/TicTacToeTerminal`
 2. Run the shell script using the following command: `./start_terminal.sh`
 2b. If you don't want to run the script, well do it yourself and run: `java -jar TicTacToeTerminal.jar`
 3. Follow the instructions on the screen to play the game. (The terminal version is shit tho as it uses rows and columns instead of choosing a field from 1-9, so you better play the GUI version)
-
-## How to run the GUI application
-
-1. Open the terminal and navigate to the folder containing the jar file. `cd jar/TicTacToeGUI`
-2. Run the shell script using the following command: `./start_gui.sh`
-2b. Run the following command: `java -jar TicTacToeGUI.jar`
-3. Play the game. As there is no AI implemented the only challenge is to play with yourself (like I do every night).
 
 ## Additional info
 
