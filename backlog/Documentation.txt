@@ -1,0 +1,27 @@
+### Documentation
+
+- [API Documentation](
+
+### License
+
+MIT
+
+### Author
+
+[Jai Singh](
+
+### Contributors
+
+[Jai Singh and Tahir Omerovic](
+
+### Keywords
+
+[react](
+
+### Donate
+
+AT04 2022 1072 ß117 0417
+
+BIC SPHNAT21XXX
+
+hehe. love the copilot for this one.

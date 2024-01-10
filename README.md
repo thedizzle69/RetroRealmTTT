@@ -12,6 +12,8 @@ The link for the github project is: https://github.com/users/thedizzle69/project
 
 Detailed information about the project and the process can be found in the "Documentation.pdf" file in the root directory of the project.
 
+The html files are located in the "docs" folder in the root directory of the project.
+
 ## How to JAVA
 
 Before running the application, make sure you have at least Java 17 installed on your machine.
@@ -53,4 +55,28 @@ There isn't much more to say. As said, please refer to the Documentation.pdf in 
 
 ## Dafuq the copilot suggested right now to end my README
 
-(I don't know why I'm writing this, as I'm the only one who will read this, but I'm bored and I don't want to do anything else, so I'm just writing this to fill the space. I'm sorry if you read this, but I'm just bored and I don't know what to do. I'm sorry. I'm really sorry. I'm so sorry. I'm so so sorry. I'm so so so sorry. I'm so so so so sorry. I'm so so so so so sorry. I'm so so so so so so sorry. I'm so so so so so so so sorry. I'm so so so so so so so so sorry. I'm so so so so so so so so so
+### Documentation
+
+API Documentation
+
+### License
+
+thedizzle69
+
+### Author
+
+Jai Singh (thedizzle69)
+
+### Contributors
+
+Jai Singh and Tahir Omerovic
+
+### Donate
+
+AT04 2022 1072 ß117 0417
+
+BIC SPHNAT21XXX
+
+## hehe. love the copilot for this one.
+
+(I don't know why I'm writing this, as I'm the only one who will read this, but I'm bored and I don't want to do anything else, so I'm just writing this to fill the space. I'm sorry if you read this, but I'm just bored and I don't know what to do. I'm sorry. I'm really sorry. I'm so sorry. I'm so so sorry. I'm so so so sorry. I'm so so so so sorry. I'm so so so so so sorry. I'm so so so so so so sorry. I'm so so so so so so so sorry. I'm so so so so so so so so sorry. I'm so so so so so so so so so)
