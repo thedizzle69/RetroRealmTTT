@@ -49,6 +49,7 @@ jobs:
           name: Terminal-Release
           path: jar/TicTacToeTerminal
 
+
   build_gui:
     runs-on: ubuntu-latest
 
@@ -102,13 +103,13 @@ jobs:
 
     steps:
       - name: Download Terminal JAR and Start Script
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: Terminal-Release
           path: jar/TicTacToeTerminal
 
       - name: Download GUI JAR and Start Script
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: GUI-Release
           path: jar/TicTacToeGUI
