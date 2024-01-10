@@ -34,7 +34,7 @@ jobs:
         run: |
           touch jar/TicTacToeTerminal/start_terminal.sh
           echo '#!/bin/bash' > jar/TicTacToeTerminal/start_terminal.sh
-          echo "java -jar TicTacToeTerminal.jar" >> jar/TicTacToeTerminal/start_terminal.sh
+          echo "sudo java -jar TicTacToeTerminal.jar" >> jar/TicTacToeTerminal/start_terminal.sh
           chmod +x jar/TicTacToeTerminal/start_terminal.sh
 
       - name: Upload Terminal Artifacts
