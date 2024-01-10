@@ -31,7 +31,7 @@ If you need any assistance, please refer to the "How_to_install_Java.md" file in
 
 ## How to run the GUI application
 
-1. Open the terminal and navigate to the folder containing the jar file. (jar/TicTacToeGUI)
+1. Open the terminal and navigate to the folder containing the jar file. `cd jar/TicTacToeGUI`
 2. Run the shell script using the following command: `./start_gui.sh`
 2b. Run the following command: `java -jar TicTacToeGUI.jar`
 3. Play the game. As there is no AI implemented the only challenge is to play with yourself (like I do every night).
