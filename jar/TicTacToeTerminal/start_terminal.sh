@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo java -jar TicTacToeTerminal.jar
+java -jar TicTacToeTerminal.jar

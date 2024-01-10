@@ -33,8 +33,8 @@ jobs:
       - name: Create Terminal Start Script
         run: |
           touch jar/TicTacToeTerminal/start_terminal.sh
-          echo "#!/bin/bash" > jar/TicTacToeTerminal/start_terminal.sh
-          echo "sudo java -jar TicTacToeTerminal.jar" >> jar/TicTacToeTerminal/start_terminal.sh
+          echo '#!/bin/bash' > jar/TicTacToeTerminal/start_terminal.sh
+          echo "java -jar TicTacToeTerminal.jar" >> jar/TicTacToeTerminal/start_terminal.sh
           chmod +x jar/TicTacToeTerminal/start_terminal.sh
 
       - name: Upload Terminal Artifacts
@@ -71,8 +71,8 @@ jobs:
       - name: Create GUI Start Script
         run: |
           touch jar/TicTacToeGUI/start_gui.sh
-          echo "#!/bin/bash" > jar/TicTacToeGUI/start_gui.sh
-          echo "sudo java -jar TicTacToeGUI.jar" >> jar/TicTacToeGUI/start_gui.sh
+          echo '#!/bin/bash' > jar/TicTacToeGUI/start_gui.sh
+          echo "java -jar TicTacToeGUI.jar" >> jar/TicTacToeGUI/start_gui.sh
           chmod +x jar/TicTacToeGUI/start_gui.sh
 
       - name: Upload GUI JAR
