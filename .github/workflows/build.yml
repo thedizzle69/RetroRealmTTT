@@ -19,6 +19,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: 'maven'
+          github_token: ${{ secrets.DOC_TOKEN }}
 
       - name: Build Terminal JAR
         run: |
