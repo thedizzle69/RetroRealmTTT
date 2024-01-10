@@ -39,8 +39,8 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          git config --global jai.singh29192@gmail.com "actions@github.com"
-          git config --global thedizzle69 "GitHub Actions"
+          git config --global user.email jai.singh29192@gmail.com "actions@github.com"
+          git config --global user.name thedizzle69 "GitHub Actions"
           git add jar/TicTacToeTerminal/
           git commit -m "Created terminal jar"
           git push https://$GITHUB_ACTOR:{{ secrets.RETRO }}@github.com/thedizzle69/RetroRealmTTT
@@ -92,8 +92,8 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          git config --global jai.singh29192@gmail.com "actions@github.com"
-          git config --global thedizzle69 "GitHub Actions"
+          git config --global user.email jai.singh29192@gmail.com "actions@github.com"
+          git config --global user.name thedizzle69 "GitHub Actions"
           git add jar/TicTacToeGUI/
           git commit -m "Created GUI jar"
           git push https://$GITHUB_ACTOR:${{ secrets.RETRO }}@github.com/thedizzle69/RetroRealmTTT
