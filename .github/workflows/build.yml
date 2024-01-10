@@ -37,6 +37,15 @@ jobs:
           echo "sudo java -jar TicTacToeTerminal.jar" >> jar/TicTacToeTerminal/start_terminal.sh
           chmod +x jar/TicTacToeTerminal/start_terminal.sh
 
+      - name: Commit and Push Changes
+        run: |
+          git config --global jai.singh29192@gmail.com "actions@github.com"
+          git config --global thedizzle69 "GitHub Actions"
+          git add jar/TicTacToeTerminal/
+          git commit -m "Created terminal jar"
+          git push https://$GITHUB_ACTOR:{{ secrets.RETRO }}@github.com/thedizzle69/RetroRealmTTT
+
+
       - name: Upload Terminal Artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -80,6 +89,14 @@ jobs:
           echo '#!/bin/bash' > jar/TicTacToeGUI/start_gui.sh
           echo "java -jar TicTacToeGUI.jar" >> jar/TicTacToeGUI/start_gui.sh
           chmod +x jar/TicTacToeGUI/start_gui.sh
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global jai.singh29192@gmail.com "actions@github.com"
+          git config --global thedizzle69 "GitHub Actions"
+          git add jar/TicTacToeGUI/
+          git commit -m "Created GUI jar"
+          git push https://$GITHUB_ACTOR:${{ secrets.RETRO }}@github.com/thedizzle69/RetroRealmTTT
 
       - name: Upload GUI JAR
         uses: actions/upload-artifact@v2

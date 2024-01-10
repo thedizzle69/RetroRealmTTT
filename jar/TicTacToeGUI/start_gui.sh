@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java -jar TicTacToeGUI.jar
+sudo java -jar TicTacToeGUI.jar
