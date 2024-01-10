@@ -82,16 +82,6 @@ jobs:
           echo "java -jar TicTacToeGUI.jar" >> jar/TicTacToeGUI/start_gui.sh
           chmod +x jar/TicTacToeGUI/start_gui.sh
 
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.email jai.singh29192@gmail.com
-          git config --global user.name thedizzle69
-          git add jar/TicTacToeGUI/
-          git commit -m "Created GUI jar"
-          echo "GitActor is $GITHUB_ACTOR"
-          echo "GitToken is ${{ secrets.DOC_TOKEN }}"
-          git push https://$GITHUB_ACTOR:${{ secrets.DOC_TOKEN }}@github.com/thedizzle69/RetroRealmTTT HEAD:main
-
       - name: Upload GUI JAR
         uses: actions/upload-artifact@v2
         with:
