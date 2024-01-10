@@ -20,7 +20,7 @@ Before running the application, make sure you have at least Java 17 installed on
 
 The project also runs fine on Java 21, tho. (I just wanted to flex that I have Java 21 installed)
 
-If you need any assistance, please refer to the "How_to_install_Java.md" file in the root directory of the project. (this is just a reminder for myself, in case i HAVE THE WRONG JAVA VERSION INSTALLED)
+If you need any assistance, please refer to the "How_to_install_Java.md" file in the root directory of the project. (this is just a reminder for myself, in case I HAVE THE WRONG JAVA VERSION INSTALLED)
 
 ## How to run the terminal application
 
