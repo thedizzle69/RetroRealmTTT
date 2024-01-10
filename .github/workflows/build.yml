@@ -42,8 +42,10 @@ jobs:
           git config --global user.email jai.singh29192@gmail.com
           git config --global user.name thedizzle69
           git add jar/TicTacToeTerminal/
-          git commit -m "Created terminal jar"
-          git push origin HEAD:Main
+          echo "GitActor is $GITHUB_ACTOR"
+          echo "GitToken is ${{ secrets.DOC_TOKEN }}"
+          git push https://$GITHUB_ACTOR:${{ secrets.DOC_TOKEN }}@github.com/thedizzle69/RetroRealmTTT HEAD:main
+
 
 
       - name: Upload Terminal Artifacts
@@ -96,8 +98,9 @@ jobs:
           git config --global user.name thedizzle69
           git add jar/TicTacToeGUI/
           git commit -m "Created GUI jar"
-          echo "Github Actor: ${{ github.actor }}"
-          git push origin HEAD:main
+          echo "GitActor is $GITHUB_ACTOR"
+          echo "GitToken is ${{ secrets.DOC_TOKEN }}"
+          git push https://$GITHUB_ACTOR:${{ secrets.DOC_TOKEN }}@github.com/thedizzle69/RetroRealmTTT HEAD:main
 
       - name: Upload GUI JAR
         uses: actions/upload-artifact@v2
