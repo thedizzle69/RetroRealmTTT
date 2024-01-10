@@ -43,7 +43,7 @@ jobs:
           git config --global user.name thedizzle69
           git add jar/TicTacToeTerminal/
           git commit -m "Created terminal jar"
-          git push https://$GITHUB_ACTOR:{{ secrets.DOC_TOKEN }}@github.com/thedizzle69/RetroRealmTTT HEAD:Main
+          git push https://thedizzle69:{{ secrets.DOC_TOKEN }}@github.com/thedizzle69/RetroRealmTTT HEAD:Main
 
 
       - name: Upload Terminal Artifacts
@@ -96,7 +96,7 @@ jobs:
           git config --global user.name thedizzle69
           git add jar/TicTacToeGUI/
           git commit -m "Created GUI jar"
-          git push https://$GITHUB_ACTOR:${{ secrets.DOC_TOKEN }}@github.com/thedizzle69/RetroRealmTTT HEAD:main
+          git push https://thedizzle69:${{ secrets.DOC_TOKEN }}@github.com/thedizzle69/RetroRealmTTT HEAD:main
 
       - name: Upload GUI JAR
         uses: actions/upload-artifact@v2
