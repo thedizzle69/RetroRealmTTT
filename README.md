@@ -73,7 +73,7 @@ Jai Singh and Tahir Omerovic
 
 ### Donate
 
-AT04 2022 1072 ß117 0417
+AT04 2022 1072 0117 0417
 
 BIC SPHNAT21XXX
 
